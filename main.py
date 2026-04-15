@@ -78,7 +78,7 @@ def main() -> None:
     try:
         engine = build_engine()
     except Exception:
-        logger.exception("Failed to initialise engine")
+        logger.exception("Failed to initialize engine")
         sys.exit(1)
 
     engine.run()

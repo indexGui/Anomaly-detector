@@ -4,7 +4,6 @@ import csv
 import logging
 import os
 import time
-from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
@@ -215,7 +214,7 @@ class CSVAlertLogger:
         """Append an alert row."""
         direction = "UP" if alert.pct_return >= 0 else "DOWN"
         row = [
-            datetime.now(timezone.utc).isoformat(),
+            alert.timestamp,
             alert.symbol,
             direction,
             f"{alert.pct_return:.6f}",
